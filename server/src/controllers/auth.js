@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { StatusCodes } from "http-status-codes";
 import User from "../models/UserModel";
 import { registerValidator, loginValidator } from "../validations/auth";
-import ApiError from " ../utils/ApiError";
+import ApiError from "../utils/ApiError";
 import { getUserByEmail } from "../services/user";
 
 class AuthController {

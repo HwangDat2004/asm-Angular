@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import Category from "../models/CategoryModel";
-import ApiError from " ../utils/ApiError";
+import ApiError from "../utils/ApiError";
 
 class CategoriesController {
   // GET /categories

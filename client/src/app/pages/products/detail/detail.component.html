@@ -1,0 +1,16 @@
+<p>Product Detail</p>
+@if(product) {
+<div>
+  <h2>{{ product.title }}</h2>
+  <img [src]="product.image" width="100px" />
+  <p>{{ product.description }}</p>
+</div>
+<countdown [config]="config" />
+<form [formGroup]="bidForm" (ngSubmit)="handleSubmit()">
+  <input type="number" formControlName="price" />
+  <button type="submit">Bid</button>
+</form>
+<p>bidPriceMax : {{ product.bidPriceMax }}</p>
+@for (bid of product.bids; track bid) {
+<p>{{ bid.user.username }} - {{ bid.createdAt | date : "dd/MM/yyyy" }}</p>
+} }
