@@ -22,7 +22,6 @@ import { CategoryService } from '../../../../services/category.service';
   providers: [MessageService],
 })
 export class ProductCreateComponent {
-  //https://v17.angular.io/api/forms/Validators
   categories: Category[] = [];
   productService = inject(ProductService);
   router = inject(Router);
@@ -34,10 +33,10 @@ export class ProductCreateComponent {
     image: new FormControl('', [Validators.required]),
     price: new FormControl(0, [Validators.required, Validators.min(0)]),
     description: new FormControl('', [Validators.required]),
-    category: new FormControl('', [Validators.required]),
-    isShow: new FormControl(true),
-    startAt: new FormControl(''),
-    bidTime: new FormControl(''),
+    // category: new FormControl('', [Validators.required]),
+    // isShow: new FormControl(true),
+    // startAt: new FormControl(''),
+    // bidTime: new FormControl(''),
   });
 
   ngOnInit() {
@@ -46,7 +45,6 @@ export class ProductCreateComponent {
         this.categories = data;
       },
       error: (error) => {
-        // show error
         console.error(error.message);
       },
     });
