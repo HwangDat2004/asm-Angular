@@ -1,0 +1,19 @@
+<!--  @if -->
+@if(product) {
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img [src]="product.image" class="card-img-top" />
+        </div>
+        <div class="col">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text">
+            {{ product.description }}
+          </p>
+          <p>Price: {{ product.price }} VND</p>
+        </div>
+      </div>
+    </div>
+    } @else {
+    <h3>Product Not Found</h3>
+    }

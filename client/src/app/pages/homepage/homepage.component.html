@@ -1,1 +1,30 @@
-<p>homepage works!</p>
+<main>
+  <div class="container mt-4">
+    <!-- products.map(product => (ProductCard)) -->
+    <div class="row">
+      @for (product of products; track product._id) {
+      <div class="col">
+        <div class="card" style="width: 18rem">
+          <img
+            class="card-img-top"
+            [src]="product.image"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">
+              {{ product.description }}
+            </p>
+            <p>Price: {{ product.price }} VND</p>
+            <a [routerLink]="['/products', product._id]" class="btn btn-primary"
+              >Detail</a
+            >
+          </div>
+        </div>
+      </div>
+      } @empty {
+      <li>There are no items.</li>
+      }
+    </div>
+  </div>
+</main>

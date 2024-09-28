@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'app-slide-amin',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  templateUrl: './slide-amin.component.html',
+  styleUrl: './slide-amin.component.css'
 })
-export class SidebarComponent {
+export class SlideAminComponent {
 
 }

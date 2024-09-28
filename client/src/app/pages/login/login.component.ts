@@ -1,13 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { UserLoginRes } from '../../../types/User';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,9 +16,6 @@ import { UserLoginRes } from '../../../types/User';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  authService = inject(AuthService);
-  router = inject(Router);
-
   loginForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
@@ -28,20 +24,30 @@ export class LoginComponent {
     ]),
   });
 
+  authService = inject(AuthService);
+  router = inject(Router);
+
+  get email() {
+    return this.loginForm.get('email');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
+  }
+
   handleSubmit() {
     console.log(this.loginForm.value);
-
-    this.authService.login(this.loginForm.value).subscribe({
-      next: (data) => {
-        localStorage.setItem('token', (data as UserLoginRes).token);
-        localStorage.setItem('userId', (data as UserLoginRes).user._id);
-
-        setTimeout(() => this.router.navigate(['/']), 1000);
-      },
-      error: (error) => {
-        // show error
-        console.error(error.message);
-      },
-    });
+    this.authService
+      .login(this.loginForm.value)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          confirm('dang nhap thanh cong!');
+          this.router.navigate(['/']);
+        },
+        error: (e) => {
+          console.log(e);
+        },
+      });
   }
 }

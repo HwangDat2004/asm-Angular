@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { LoginForm, RegisterForm } from '../../types/User';
+import { LoginForm, RegisterForm } from '../../types/user';
+
 
 @Injectable({
   providedIn: 'root',

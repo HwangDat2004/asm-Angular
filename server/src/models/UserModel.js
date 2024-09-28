@@ -16,10 +16,10 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
-    // role: {
-    //   type: String,
-    //   default: "member",
-    // },
+    role: {
+      type: String,
+      default: "member",
+    },
   },
   {
     timestamps: true,

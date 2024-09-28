@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "client": {
+    "web208-angular-base": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,21 +13,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/client",
+            "outputPath": "dist/web208-angular-base",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/@ngneat/hot-toast/src/styles/styles.css"
             ],
             "scripts": []
           },
@@ -59,10 +53,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "client:build:production"
+              "buildTarget": "web208-angular-base:build:production"
             },
             "development": {
-              "buildTarget": "client:build:development"
+              "buildTarget": "web208-angular-base:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -70,24 +64,16 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "client:build"
+            "buildTarget": "web208-angular-base:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         }
@@ -95,6 +81,6 @@
     }
   },
   "cli": {
-    "analytics": "eb3bb8a7-d1c6-4f47-b02e-b97848a87f25"
+    "analytics": "b4954a31-11ce-40ea-97cc-82421defd5a4"
   }
 }

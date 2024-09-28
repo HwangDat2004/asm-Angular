@@ -7,49 +7,33 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ToastModule } from 'primeng/toast';
-import { MessageService } from 'primeng/api';
-import { ProductService } from '../../../../services/product.service';
-import { Category } from '../../../../../types/Category';
-import { CategoryService } from '../../../../services/category.service';
+import { ProductService } from '../../../../services/products.service';
+
+
 
 @Component({
   selector: 'app-create',
   standalone: true,
-  imports: [ReactiveFormsModule, ToastModule],
+  imports: [],
   templateUrl: './create.component.html',
   styleUrl: './create.component.css',
-  providers: [MessageService],
+  providers: [ ],
 })
 export class ProductCreateComponent {
-  categories: Category[] = [];
   productService = inject(ProductService);
   router = inject(Router);
-  messageService = inject(MessageService);
-  categoryService = inject(CategoryService);
 
   addProductForm: FormGroup = new FormGroup({
     title: new FormControl('', [Validators.required]),
     image: new FormControl('', [Validators.required]),
     price: new FormControl(0, [Validators.required, Validators.min(0)]),
     description: new FormControl('', [Validators.required]),
-    // category: new FormControl('', [Validators.required]),
-    // isShow: new FormControl(true),
-    // startAt: new FormControl(''),
-    // bidTime: new FormControl(''),
+    category: new FormControl('', [Validators.required]),
+    isShow: new FormControl(true),
+    startAt: new FormControl(''),
+    bidTime: new FormControl(''),
   });
-
-  ngOnInit() {
-    this.categoryService.getAllCategories().subscribe({
-      next: (data) => {
-        this.categories = data;
-      },
-      error: (error) => {
-        console.error(error.message);
-      },
-    });
-  }
-
+  messageService: any;
   handleCreateProduct() {
     console.log(this.addProductForm.value);
     this.productService

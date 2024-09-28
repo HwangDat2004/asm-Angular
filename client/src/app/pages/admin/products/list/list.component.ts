@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { Product } from '../../../../../types/Product';
-import { ProductService } from '../../../../services/product.service';
 import { RouterLink } from '@angular/router';
+import { Product } from '../../../../../types/product';
+import { ProductService } from '../../../../services/products.service';
 
 @Component({
   selector: 'app-list',
@@ -27,7 +27,7 @@ export class ProductListComponent {
   }
 
   handleDeleteProduct(id: string) {
-    if (window.confirm('Xoa that nhe')) {
+    if (window.confirm('cook')) {
       this.productService.deleteProduct(id).subscribe({
         next: () => {
           this.products = this.products.filter((product) => product._id !== id);

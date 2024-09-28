@@ -11,5 +11,5 @@ import { FooterComponent } from '../../components/footer/footer.component';
   styleUrl: './client-layout.component.css'
 })
 export class ClientLayoutComponent {
-
+  
 }

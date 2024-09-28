@@ -19,31 +19,31 @@ const ProductSchema = new Schema(
       type: String,
       required: true,
     },
-    // category: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: "Category",
-    // },
-    // isShow: {
-    //   type: Boolean,
-    //   default: true,
-    // },
-    // startAt: {
-    //   type: Date,
-    // },
-    // endAt: {
-    //   type: Date,
-    // },
-    // bidTime: {
-    //   type: Number,
-    // },
-    // bidPriceMax: {
-    //   type: Number,
-    //   default: 0,
-    // },
-    // bids: {
-    //   type: [Schema.Types.ObjectId],
-    //   ref: "Bid",
-    // },
+    category: {
+      type: Schema.Types.ObjectId,
+      ref: "Category",
+    },
+    isShow: {
+      type: Boolean,
+      default: true,
+    },
+    startAt: {
+      type: Date,
+    },
+    endAt: {
+      type: Date,
+    },
+    bidTime: {
+      type: Number,
+    },
+    bidPriceMax: {
+      type: Number,
+      default: 0,
+    },
+    bids: {
+      type: [Schema.Types.ObjectId],
+      ref: "Bid",
+    },
   },
   {
     timestamps: true,
