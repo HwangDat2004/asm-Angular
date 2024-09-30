@@ -4,7 +4,6 @@ import ApiError from "../utils/ApiError";
 import Product from "../models/ProductModel";
 
 class BidsController {
-  // POST /bids
   async createBid(req, res, next) {
     try {
       const newBid = await Bid.create(req.body);

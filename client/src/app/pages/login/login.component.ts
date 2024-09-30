@@ -42,8 +42,9 @@ export class LoginComponent {
       .subscribe({
         next: (data) => {
           console.log(data);
-          confirm('dang nhap thanh cong!');
-          this.router.navigate(['/']);
+          // confirm('dang nhap thanh cong!');
+          // this.router.navigate(['/']);
+          localStorage.setItem('token', data.token);
         },
         error: (e) => {
           console.log(e);
