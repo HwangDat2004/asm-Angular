@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #000; /* Nền màu đen */
+    position: fixed; /* Ghim header */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Đảm bảo header nằm trên các phần tử khác */
+}
+
+/* Để tránh phần nội dung bị che bởi header */
+body {
+    padding-top: 70px; /* Khoảng cách tương đương với chiều cao của header */
+}
+
+.navbar-nav {
+    flex-grow: 1;
+    justify-content: center; /* Menu ở giữa */
+}
+
+.nav-link {
+    color: #fff; /* Màu chữ trắng cho menu */
+}
+
+.nav-link:hover {
+    color: #ccc; /* Màu chữ khi hover */
+}
+
+.register-btn {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+}
+
+.register-btn:hover {
+    color: #000;
+    background-color: #fff;
+}

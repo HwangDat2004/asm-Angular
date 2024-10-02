@@ -1,29 +1,47 @@
 <main>
-  <div class="container mt-4">
-    <!-- products.map(product => (ProductCard)) -->
+  <div class="container mt-5">
+    <!-- Title của trang -->
+    <div class="text-center mb-4">
+      <h1>Our Products</h1>
+      <p>Check out our latest collection</p>
+    </div>
+    
+    <!-- Bắt đầu hiển thị danh sách sản phẩm -->
     <div class="row">
       @for (product of products; track product._id) {
-      <div class="col">
-        <div class="card" style="width: 18rem">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <!-- Hình ảnh sản phẩm -->
           <img
             class="card-img-top"
             [src]="product.image"
-            alt="Card image cap"
+            alt="Product Image"
+            style="height: 250px; object-fit: cover"
           />
+
+          <!-- Thông tin sản phẩm -->
           <div class="card-body">
             <h5 class="card-title">{{ product.title }}</h5>
-            <p class="card-text">
+            <p class="card-text text-truncate" style="max-height: 50px;">
               {{ product.description }}
             </p>
-            <p>Price: {{ product.price }} VND</p>
-            <a [routerLink]="['/products', product._id]" class="btn btn-primary"
-              >Detail</a
-            >
+            <p class="font-weight-bold">Price: {{ product.price }} VND</p>
+          </div>
+
+          <!-- Nút 'Detail' -->
+          <div class="card-footer bg-transparent text-center">
+            <a [routerLink]="['/products', product._id]" class="btn btn-primary w-100">
+              View Details
+            </a>
           </div>
         </div>
       </div>
       } @empty {
-      <li>There are no items.</li>
+      <div class="col-12">
+        <div class="alert alert-warning text-center">
+          There are no items.
+        </div>
+      </div>
       }
     </div>
   </div>

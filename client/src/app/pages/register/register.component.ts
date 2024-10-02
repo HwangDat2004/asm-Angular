@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-register',
@@ -19,6 +20,7 @@ export class RegisterComponent {
 
   authService = inject(AuthService);
   router = inject(Router);
+  toast = inject(HotToastService);
 
   handleSubmit() {
     console.log(this.registerForm.value);
@@ -30,6 +32,7 @@ export class RegisterComponent {
       },
       error: (e) => {
         console.log(e);
+        this.toast.error(e.error.message);
       },
     })
   }

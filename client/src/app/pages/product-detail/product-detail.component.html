@@ -1,19 +1,31 @@
 <!--  @if -->
 @if(product) {
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <img [src]="product.image" class="card-img-top" />
+  <div class="container my-5 p-5">
+    <div class="row">
+      <!-- Cột chứa hình ảnh sản phẩm -->
+      <div class="col-md-6">
+        <div class="product-image">
+          <img [src]="product.image" class="img-fluid rounded" alt="{{ product.title }}" />
         </div>
-        <div class="col">
-          <h5 class="card-title">{{ product.title }}</h5>
-          <p class="card-text">
-            {{ product.description }}
-          </p>
-          <p>Price: {{ product.price }} VND</p>
+      </div>
+
+      <!-- Cột chứa thông tin sản phẩm -->
+      <div class="col-md-6">
+        <div class="product-details">
+          <h1 class="display-5">{{ product.title }}</h1>
+          <p class="text-muted">{{ product.description }}</p>
+          <h4 class="my-4">Price: <span class="text-danger">{{ product.price }} VND</span></h4>
+          
+          <!-- Thêm nút mua hàng hoặc liên kết -->
+          <button class="btn btn-primary btn-lg">Add to Cart</button>
+          <a href="/products" class="btn btn-secondary btn-lg ms-2">Back to Products</a>
         </div>
       </div>
     </div>
-    } @else {
-    <h3>Product Not Found</h3>
-    }
+  </div>
+} @else {
+  <div class="container text-center my-5">
+    <h3 class="text-danger">Product Not Found</h3>
+    <a href="/products" class="btn btn-primary">Back to Products</a>
+  </div>
+}

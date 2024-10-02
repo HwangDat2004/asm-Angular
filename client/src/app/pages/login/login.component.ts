@@ -7,11 +7,13 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { NgIf } from '@angular/common';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,NgIf],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -26,6 +28,7 @@ export class LoginComponent {
 
   authService = inject(AuthService);
   router = inject(Router);
+  toast = inject(HotToastService);
 
   get email() {
     return this.loginForm.get('email');
@@ -42,12 +45,12 @@ export class LoginComponent {
       .subscribe({
         next: (data) => {
           console.log(data);
-          // confirm('dang nhap thanh cong!');
-          // this.router.navigate(['/']);
+          this.router.navigate(['/']);
           localStorage.setItem('token', data.token);
         },
         error: (e) => {
           console.log(e);
+          this.toast.error(e.error.message);
         },
       });
   }

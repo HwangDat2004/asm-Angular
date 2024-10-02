@@ -1,0 +1,28 @@
+@media (min-width: 992px) {
+    .card-columns {
+      column-count: 3;
+    }
+  }
+
+  /* Hiệu ứng khi hover vào sản phẩm */
+  .card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Căn giữa sản phẩm với text-align */
+  .card-footer {
+    text-align: center;
+  }
+
+  /* Đảm bảo phần footer không bị chồng chéo */
+  .card-footer .btn {
+    font-weight: bold;
+  }
+
+  /* Giới hạn chiều cao của description */
+  .card-text.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
