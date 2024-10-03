@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProductListComponent } from './pages/admin/products/list/list.component';
+import { AddComponent } from './pages/admin/products/add/add.component';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,10 @@ export const routes: Routes = [
         path: 'list',
         component: ProductListComponent,
       },
+      {
+        path: 'add',
+        component: AddComponent,
+      }
     ],
   },
   {

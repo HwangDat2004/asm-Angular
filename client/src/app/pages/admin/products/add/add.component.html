@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Add</h1>
+    <form [formGroup]="addForm" (ngSubmit)="handleaddSubmit()">
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Title</label>
+        <input type="text" class="form-control" id="validationCustom01" formControlName="title">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Price</label>
+        <input type="number" class="form-control" id="validationCustom01" formControlName="price">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Description</label>
+        <input type="text" class="form-control" id="validationCustom01" formControlName="description">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Image</label>
+        <input type="file" class="form-control" id="validationCustom01" formControlName="image">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+     
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form>
+</div>
