@@ -27,7 +27,7 @@ export class RegisterComponent {
     this.authService.register(this.registerForm.value).subscribe({
       next: (data) => {
         console.log(data);
-        confirm('dang ky thanh cong!');
+        this.toast.success('Dang ky thanh cong');
         this.router.navigate(['/login']);
       },
       error: (e) => {

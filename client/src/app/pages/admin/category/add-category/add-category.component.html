@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Add</h1>
+    <form class="row g-3 needs-validation" [formGroup]="addCategoryForm" (ngSubmit)="handleaddCategorySubmit()">
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Category</label>
+        <input type="text" class="form-control" id="validationCustom01" formControlName="name">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+     
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form>
+</div>
+

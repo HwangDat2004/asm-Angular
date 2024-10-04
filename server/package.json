@@ -4,7 +4,8 @@
   "description": "web503-nodejs-base",
   "main": "server.js",
   "scripts": {
-    "start": "vite"
+    "start": "vite",
+    "dev:server": "nodemon --watch src --exec vite"
   },
   "keywords": [],
   "author": "hoadv",

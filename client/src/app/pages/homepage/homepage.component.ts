@@ -24,7 +24,6 @@ export class HomepageComponent {
       error: (e) => {
         console.log(e);
         this.toast.error('Error: ' + e.message);
-        // alert('Error: ' + e.message);
       },
     });
   }

@@ -45,6 +45,7 @@ export class LoginComponent {
       .subscribe({
         next: (data) => {
           console.log(data);
+          this.toast.success('Dang nhap thanh cong');
           this.router.navigate(['/']);
           localStorage.setItem('token', data.token);
         },

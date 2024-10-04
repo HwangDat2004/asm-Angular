@@ -7,6 +7,8 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { RegisterComponent } from './pages/register/register.component';
 import { ProductListComponent } from './pages/admin/products/list/list.component';
 import { AddComponent } from './pages/admin/products/add/add.component';
+import { ListCategoryComponent } from './pages/admin/category/list-category/list-category.component';
+import { AddCategoryComponent } from './pages/admin/category/add-category/add-category.component';
 
 export const routes: Routes = [
   {
@@ -14,12 +16,20 @@ export const routes: Routes = [
     component: AdminLayoutComponent,
     children: [
       {
-        path: 'list',
+        path: 'products/list',
         component: ProductListComponent,
       },
       {
-        path: 'add',
+        path: 'products/add',
         component: AddComponent,
+      },
+      {
+        path: 'category/list',
+        component: ListCategoryComponent ,
+      },
+      {
+        path: 'category/add',
+        component: AddCategoryComponent,
       }
     ],
   },
