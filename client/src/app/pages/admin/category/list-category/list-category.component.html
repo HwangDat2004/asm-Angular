@@ -2,25 +2,27 @@
 <div class="container">
     <div class="card shadow-sm">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <span>Product Info</span>
+        <span>Category Info</span>
         <a routerLink="/admin/category/add" class="btn btn-success">
-          Create Product
+          Create Category
         </a>
       </div>
       <div class="table-responsive">
         <table class="table table-hover table-bordered">
           <thead class="table-dark">
             <tr>
-              <th>Name</th>
+              <th>Category</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             @for (category of categories ; track category._id) {
             <tr>
-              <td>{{ category.name }}
+              <td>{{ category.name }}</td>
+              <td>
                 <div class="d-grid gap-2 d-md-block">
                   <a
-                    class="btn btn-info btn-sm"
+                    class="btn btn-info btn-sm m-1"
                     [routerLink]="['/admin/products/edit', category._id]"
                     >Edit</a
                   >
