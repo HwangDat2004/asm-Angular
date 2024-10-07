@@ -20,4 +20,7 @@ export class CategoryService {
  createCategory(data: Category) {
   return this.http.post(this.apiUrl, data);
  }
+ editCategory(id: string, data: Category) {
+  return this.http.put(`${this.apiUrl}/${id}`, data);
+ }
 }
