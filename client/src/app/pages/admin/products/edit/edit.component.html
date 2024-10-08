@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Add</h1>
-    <form class="row g-3 needs-validation" [formGroup]="addForm" (ngSubmit)="handleaddSubmit()">
+    <form class="row g-3 needs-validation" [formGroup]="editForm" (ngSubmit)="handleEditSubmit()">
       <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Title</label>
         <input type="text" class="form-control" id="validationCustom01" formControlName="title">
@@ -23,43 +23,12 @@
         </div>
       </div>
       <div class="col-md-4">
-        <label for="category" class="form-label">Category</label>
-        <select class="form-control" id="category" formControlName="category">
-          <option value="">Select Category</option>
-          @for (category of categories; track category._id) {
-          <option value="{{ category._id }}">{{ category.name }}</option>
-          }
-        </select>
-      </div>
-      <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Image</label>
         <input type="text" class="form-control" id="validationCustom01" formControlName="image">
         <div class="valid-feedback">
           Looks good!
         </div>
       </div>
-      <div class="col-md-4">
-        <label for="startAt" class="form-label">Start At</label>
-          <input
-            type="datetime-local"
-            class="form-control"
-            id="startAt"
-            formControlName="startAt"
-          />
-      </div>
-      <div class="col-md-4">
-        <label for="times" class="form-label">Select Times</label>
-        <select class="form-control" id="times" formControlName="bidTime">
-          <option value="">Select Time</option>
-          <option value="15">15p</option>
-          <option value="30">30p</option>
-          <option value="60">1h</option>
-        </select>
-      </div>
-      <div class="col-md-4">
-        
-      </div>
-
 
      
       <div class="col-12">
@@ -67,3 +36,4 @@
       </div>
     </form>
 </div>
+

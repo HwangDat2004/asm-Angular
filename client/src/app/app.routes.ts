@@ -9,6 +9,7 @@ import { ProductListComponent } from './pages/admin/products/list/list.component
 import { AddComponent } from './pages/admin/products/add/add.component';
 import { ListCategoryComponent } from './pages/admin/category/list-category/list-category.component';
 import { AddCategoryComponent } from './pages/admin/category/add-category/add-category.component';
+import { EditComponent } from './pages/admin/products/edit/edit.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +24,12 @@ export const routes: Routes = [
         path: 'products/add',
         component: AddComponent,
       },
+      {
+        path: 'products/edit/:id',
+        component: EditComponent,
+      },
+
+      // category
       {
         path: 'category/list',
         component: ListCategoryComponent ,

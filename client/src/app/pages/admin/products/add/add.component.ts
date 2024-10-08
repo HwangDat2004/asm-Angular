@@ -3,6 +3,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from '../../../../services/products.service';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Router } from '@angular/router';
+import { Category } from '../../../../../types/category';
+import { CategoryService } from '../../../../services/category.service';
 
 @Component({
   selector: 'app-add',
@@ -14,14 +16,31 @@ import { Router } from '@angular/router';
 export class AddComponent {
   addForm: FormGroup = new FormGroup({
     title: new FormControl(''),
-    price: new FormControl(''),
     image: new FormControl(''),
+    price: new FormControl(0),
     description: new FormControl(''),
+    category: new FormControl(''),
+    isShow: new FormControl(true),
+    startAt: new FormControl(''),
+    bidTime: new FormControl(''),
   });
 
   productService = inject(ProductService);
   router = inject(Router);
   toast = inject(HotToastService);
+  categories: Category[] = [];
+  categoryService = inject(CategoryService);
+
+  ngOnInit() {
+    this.categoryService.getAllCategories().subscribe({
+      next: (categories) => {
+        this.categories = categories;
+      },
+      error: () => {
+        this.toast.error('Error');
+      },
+    });
+  }
 
   handleaddSubmit() {
     console.log(this.addForm.value);
